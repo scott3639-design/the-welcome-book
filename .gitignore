@@ -1,0 +1,7 @@
+production/
+
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+.wrangler/

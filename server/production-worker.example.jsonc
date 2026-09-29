@@ -1,0 +1,14 @@
+{
+  // Deployment template only. No account, domain or deployment is configured.
+  "name": "the-welcome-book",
+  "main": "enquiry.mjs",
+  "compatibility_date": "2026-09-29",
+  "assets": {"directory": "../production", "binding": "ASSETS", "run_worker_first": ["/api/enquiry"]},
+  "vars": {"ENQUIRIES_ENABLED": "false"},
+  "ratelimits": [{
+    "name": "ENQUIRY_RATE_LIMITER",
+    // Choose an unused namespace within the eventual hosting account.
+    "namespace_id": "35035",
+    "simple": {"limit": 5, "period": 60}
+  }]
+}
